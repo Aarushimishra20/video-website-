@@ -1,0 +1,171 @@
+/* Basic Setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Form Container */
+.register-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 900px;
+    border-top: 4px solid #ffd700;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 2-Column Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+    margin-bottom: 20px;
+}
+
+/* --- YEH HAI NAYI STYLING --- */
+
+/* Naya Input Box ka Container */
+.form-field {
+    position: relative; /* Label ko iske andar fit karne ke liye */
+}
+
+/* Naya Label (Jo andar dikhega) */
+.form-field label {
+    position: absolute;
+    top: 50%; /* Vertical center */
+    left: 12px;
+    transform: translateY(-50%); /* Exact vertical center */
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    
+    /* Jab input focus ho ya usmein text ho, tab yeh style apply hoga */
+    transition: all 0.2s ease;
+    
+    /* Taaki label par click karne se input select ho */
+    pointer-events: none; 
+}
+
+/* Asli Input Box */
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="password"],
+.form-field input[type="tel"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 18px 12px 6px 12px; /* top, sides, bottom */
+    font-size: 16px;
+    box-sizing: border-box; /* Padding ko width mein include karega */
+}
+
+/* YEH HAI ASLI MAGIC (Floating Label Effect) */
+/* Jab input par click karein (focus) YA usmein text ho (:not(:placeholder-shown)) */
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+    top: 8px; /* Label ko upar bhej do */
+    transform: translateY(0);
+    font-size: 11px; /* Label ko chhota kar do */
+    color: #555;
+}
+
+/* Input par click (focus) hone par border ko thoda dark kar dein */
+.form-field input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+/* --- END NAYI STYLING --- */
+
+
+/* Password Eye Icon (Thoda adjust karna hoga) */
+.password-wrapper {
+    position: relative;
+}
+.password-wrapper .fa-eye,
+.password-wrapper .fa-eye-slash {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+}
+
+/* CAPTCHA Styling */
+.captcha-wrapper {
+    display: flex;
+    align-items: stretch; /* Height barabar karne ke liye */
+    gap: 10px;
+}
+.captcha-input-field {
+    position: relative; /* Label ke liye */
+    flex-grow: 1;
+}
+.captcha-img {
+    height: 50px; /* Input height ke barabar */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Custom Radio Button Styling (Same) */
+.radio-group { display: flex; gap: 20px; }
+.radio-group input[type="radio"] { display: none; }
+.radio-label { display: flex; align-items: center; cursor: pointer; font-size: 16px; }
+.custom-radio { width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 50%; margin-right: 8px; display: inline-block; position: relative; }
+input[type="radio"]:checked + .radio-label.radio-yes .custom-radio { border-color: #28a745; }
+input[type="radio"]:checked + .radio-label.radio-yes .custom-radio::after { content: ''; width: 10px; height: 10px; background-color: #28a745; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+input[type="radio"]:checked + .radio-label.radio-no .custom-radio { border-color: #6c757d; }
+input[type="radio"]:checked + .radio-label.radio-no .custom-radio::after { content: ''; width: 10px; height: 10px; background-color: #6c757d; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Normal Fields (Agency Code) (Same) */
+.normal-label { font-size: 14px; color: #333; display: block; margin-bottom: 5px; }
+.normal-input { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.helper-text { font-size: 12px; color: #666; margin-top: 8px; line-height: 1.5; }
+
+/* Checkbox (Same) */
+.checkbox-group { display: flex; align-items: center; margin-top: 25px; }
+.checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-right: 10px; }
+.checkbox-group label { font-size: 14px; color: #555; line-height: 1.5; }
+
+/* Register Button (Same) */
+.register-btn { width: 100%; padding: 14px; font-size: 18px; font-weight: bold; color: #333; background-color: #ffd700; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px; }
+.register-btn:hover { background-color: #f0c800; }
+
+/* Mobile responsive (Same) */
+@media (max-width: 768px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .register-container { padding: 20px; }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Card Assignment</title> <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .video-card { /* Class ka naam badal diya */
+            width: 80%;
+            max-width: 400px; 
+            border: 1px solid #ccc;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; 
+        }
+        
+        /* * Ab ye CSS <video> tag par apply hoga 
+         * (Image poster attribute mein chali gayi hai)
+        */
+        .video-card video {
+            width: 100%;
+            display: block; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="video-card">
+
+        <video
+            src="my-video.mp4"  /* Yahan apni video file daalein */
+            poster="https://images.pexels.com/photos/34504427/pexels-photo-34504427.jpeg"
+            autoplay
+            muted
+            loop
+        >
+            Sorry, your browser does not support the video tag.
+        </video>
+
+    </div>
+
+</body>
+</html>

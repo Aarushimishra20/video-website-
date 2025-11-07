@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Practical 2: Fixed vs Sticky</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            /* Page ko lamba banane ke liye */
+            height: 2000px; 
+        }
+
+        /* ----- 1. FIXED BOX (Green) ----- */
+        #fixed-box {
+            width: 100%;
+            background-color: #d1ffd1; /* Light green */
+            border: 2px solid green;
+            padding: 10px;
+            top: 0;
+            
+            /* --- YEH IMPORTANT HAI --- */
+            position: fixed;
+            
+            /* Screen ke top-right par fix kar diya */
+            
+             /* Hamesha upar dikhega */
+        }
+
+        /* ----- 2. STICKY BOX (Yellow) ----- */
+        #sticky-box {
+            background-color: #ffffcc; /* Light yellow */
+            border: 2px solid #cccc00;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 100px;
+
+             /* Thoda neeche se shuru karenge */
+
+            /* --- YEH IMPORTANT HAI --- */
+            position: sticky;
+            
+            /* Yeh top se 0px par aakar chipak jaayega */
+            top: 0; 
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: 53px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="fixed-box">
+        Box 1 (Fixed)
+        <br><br>
+        Main hamesha screen par rahoonga, chahe aap kahin bhi scroll karein.
+    </div>
+
+    <div class="content">
+        <h1>Practical 2: Fixed vs. Sticky</h1>
+        <p>Page ko neeche scroll karke dekhiye...</p>
+        <p>Green Box (Fixed) apni jagah par hi rahega.</p>
+        <p>Scroll karte rahiye...</p>
+        <p>Aapko neeche ek Yellow Box (Sticky) dikhega.</p>
+        <p>Jab woh top se takrayega, tab woh wahin "chipak" jaayega.</p>
+    </div>
+
+    <div id="sticky-box">
+        Box 2 (Sticky) - Main ab top par chipak jaaunga!
+    </div>
+
+    <div class="content">
+        <h2>Content (Sticky ke baad)</h2>
+        <p>Ab aap scroll karenge, toh Yellow Box top par chipka rahega.</p>
+        <p>Green Box (Fixed) abhi bhi top-right mein hai.</p>
+    </div>
+
+</body>
+</html>

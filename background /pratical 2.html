@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Attachment Demo</title>
+    <style>
+        /* Basic reset for the page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* * ======================================
+         * SECTION 1: The "Fixed" Section
+         * ======================================
+        */
+        .parallax-section {
+            /* 1. The background image. 
+               (Using a placeholder. Replace with your image) */
+            background-image: url('https://picsum.photos/id/1018/1920/1080');
+
+            /* 2. Make the section fill the entire screen height */
+            height: 100vh; /* 100vh = 100% of the viewport height */
+
+            /* 3. ★★★ THIS IS THE KEY PROPERTY ★★★
+               This "fixes" the background relative to the viewport. */
+            background-attachment: fixed;
+
+            /* 4. These properties make the image look good */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Just for styling the text content */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .parallax-section h2 {
+            font-size: 3em;
+            /* Add a shadow to make text more readable */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .parallax-section p {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+
+        /* * ======================================
+         * SECTION 2: The "Normal" Section
+         * ======================================
+        */
+        .normal-section {
+            /* 1. No background image, just a simple color */
+            background-color: #f4f4f4;
+
+            /* 2. NO 'background-attachment: fixed' here. 
+               The background will scroll with the content (this is default) */
+            
+            /* 3. Add padding and height to make the page scrollable */
+            padding: 50px;
+            color: #333;
+            /* We add a lot of height so you HAVE to scroll */
+            height: 1000px; 
+        }
+
+        .normal-section h2 {
+            font-size: 2.5em;
+        }
+
+        .normal-section p {
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="parallax-section">
+        <h2>SECTION 1 (Fixed)</h2>
+        <p>This section uses <strong>background-attachment: fixed;</strong>.</p>
+        <p>Scroll down to see the effect...</p>
+    </section>
+
+    <section class="normal-section">
+        <h2>SECTION 2 (Normal)</h2>
+        <p>This is the normal section. It does NOT use 'fixed' attachment.</p>
+        <p>As you scroll, the background of Section 1 (the image) stays in place,
+           and this grey content area scrolls over it.</p>
+        <p>This is commonly called a "Parallax" effect.</p>
+        <p>We add lots of text here just to make the page long enough to scroll
+           and see the full effect...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+           posuere erat a ante. Pellentesque habitant morbi tristique senectus et
+           netus et malesuada fames ac turpis egestas. ... (more text) ...</p>
+    </section>
+
+</body>
+</html>

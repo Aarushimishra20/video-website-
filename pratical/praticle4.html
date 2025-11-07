@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Box (Exactly 4 Lines)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        #scroll-box {
+            width: 400px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: white;
+            font-size: 16px;
+
+            /* 1. Har line ki height 25px set ki */
+            line-height: 25px; 
+            
+            /* 2. Box ki height = 4 line * 25px = 100px */
+            height: 100px;
+            
+            /* 3. Agar content bada hai, toh scrollbar dikhao */
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Scrollable Box Task (Exactly 4 Lines)</h2>
+    <p>Is box ki height 4 line ke barabar fix hai. Andar scroll karein.</p>
+
+    <div id="scroll-box">
+Yeh pehli line hai. Lorem ipsum dolor sit amet.<br>
+Yeh doosri line hai. Consectetur adipiscing elit.<br>
+Yeh teesri line hai. Sed do eiusmod tempor incididunt.<br>
+Yeh chauthi line hai. Ut labore et dolore magna aliqua.<br>
+Line 5: (Ab yahan se scroll karna padega).<br>
+Line 6: Ut enim ad minim veniam, quis nostrud.<br>
+Line 7: Exercitation ullamco laboris nisi ut aliquip.<br>
+Line 8: Ex ea commodo consequat. Duis aute irure.<br>
+Line 9: Dolor in reprehenderit in voluptate velit.<br>
+Line 10: Esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+
+</body>
+</html>

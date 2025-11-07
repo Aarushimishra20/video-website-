@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-class (Clearer Effect)</title>
+    <style>
+        
+        /* --- Button Base Style (As before) --- */
+        .my-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* 1. HOVER Effect: When the mouse is over the button */
+        .my-button:hover {
+            background-color: #0056b3; /* Darker Blue */
+        }
+
+        /* 2. ACTIVE Effect: When the button is being clicked (held down) */
+        .my-button:active {
+            transform: scale(0.98); /* Make it slightly smaller */
+        }
+
+
+        /* --- List Styles (Changes are here) --- */
+
+        .my-list li {
+            padding: 10px; /* A bit more padding */
+            font-size: 18px;
+            /* I removed the default background-color 
+               to make the effect clearer */
+            border-bottom: 1px solid #eee; /* Light border */
+        }
+        
+        /* 3. NTH-CHILD Effect: Targets every second (even) item */
+        .my-list li:nth-child(even) {
+            background-color: #e6f7ff; /* A clear light blue */
+            font-weight: bold; /* Also make the text bold */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Assignment 1: Clear Effects</h2>
+
+    <button class="my-button">Hover and Click Me!</button>
+
+    <ul class="my-list">
+        <li>Item 1 (Odd)</li>
+        <li>Item 2 (Even)</li>
+        <li>Item 3 (Odd)</li>
+        <li>Item 4 (Even)</li>
+        <li>Item 5 (Odd)</li>
+    </ul>
+
+</body>
+</html>

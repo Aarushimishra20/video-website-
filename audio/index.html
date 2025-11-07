@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Card Assignment</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* * 1. This is the main card container.
+         * We give it a width and a box-shadow to make it look like a card.
+        */
+        .audio-card {
+            width: 80%;
+            max-width: 400px; /* Max width for the card */
+            border: 1px solid #ccc;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; /* This keeps the image corners rounded */
+        }
+        
+        /* * 2. This styles the image.
+         * width: 100% makes it fill the card's width.
+         * display: block removes any extra space below the image.
+        */
+        .audio-card img {
+            width: 100%;
+            display: block;
+        }
+
+        /* * 3. This styles the audio player.
+         * width: 100% makes it fill the card's width.
+        */
+        .audio-card audio {
+            width: 100%;
+            /* Fix for a small gap some browsers add */
+            display: block; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="audio-card">
+
+        <img src="https://images.pexels.com/photos/34504427/pexels-photo-34504427.jpeg" alt="Album Art">
+
+        <audio 
+            src="music.mp3"  /* Make sure you have a music.mp3 file */
+            autoplay
+            muted
+            controls>
+            Sorry, your browser does not support the audio tag.
+        </audio>
+
+    </div>
+
+</body>
+</html>

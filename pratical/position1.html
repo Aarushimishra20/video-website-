@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Practical 1: Static</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            margin-top: 10px;
+        }
+
+        /* ----- 1. STATIC BOX (Red) ----- */
+        #static-box {
+            background-color: #ffcccc; /* Light red */
+            
+            /* Yeh 'static' hai (default). */
+            position: static;
+            
+            /* Humne shift properties di hain, lekin yeh kaam nahi karengi */
+            left: 50px; 
+            top: 50px;
+        }
+
+        /* ----- 2. RELATIVE BOX (Blue) ----- */
+        #relative-box {
+            background-color: #cceeff; /* Light blue */
+
+            /* Yeh 'relative' hai. */
+            position: relative;
+            
+            /* Yahan shift properties kaam karengi */
+            left: 50px; 
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Practical 1: position: static Check</h2>
+
+    <p>Is box ko <code>position: static;</code> aur <code>left: 50px;</code> diya hai. Yeh nahi hila.</p>
+    <div class="box" id="static-box">
+        Box 1 (Static)
+    </div>
+
+    <p>Is box ko <code>position: relative;</code> aur <code>left: 50px;</code> diya hai. Yeh 50px shift ho gaya.</p>
+    <div class="box" id="relative-box">
+        Box 2 (Relative)
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Practical 3: Box B Floating on Top</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        #container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 3px dashed black;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box; 
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        
+        #box-a {
+            background-color: #f87171; 
+            top: 50px;
+            left: 50px;
+            z-index: 1; 
+            opacity: 0.9;
+        }
+
+        #box-b {
+            background-color: #6366f1; 
+            top: 50px;
+            left: 150px; 
+            z-index: 3; /* B sabse UPAR */
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        #box-c {
+            background-color: #34d399; 
+            top: 50px;
+            left: 250px;
+            z-index: 2; /* C ab B ke peeche hai */
+            opacity: 0.9;
+            
+            /* SOLUTION: Text ko visible area (right) mein move kar diya */
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Practical 3: Box B Floating on Top</h2>
+    <p>Humne Box B ko <code>box-shadow</code> aur <code>transform</code> dekar "float" effect diya hai.</p>
+    <p>Aur "Box C" text ko <code>text-align: right;</code> se visible kar diya hai.</p>
+
+    <div id="container">
+
+        <div class="box" id="box-a">Box A</div>
+        <div class="box" id="box-b">Box B</div>
+        <div class="box" id="box-c">Box C</div>
+
+    </div>
+
+</body>
+</html>
