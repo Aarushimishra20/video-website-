@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Image Background Box</title>
+    <style>
+        .multi-box {
+            /* Box ka size */
+            width: 600px;
+            height: 400px;
+            border: 2px solid #333;
+            
+            /* Text "abcd" ke liye */
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 20px;
+            text-shadow: 2px 2px 5px #000; /* Text par shadow */
+
+            /* --- CHAAR BACKGROUND IMAGES --- */
+            /* KRAM (Order): Upar, Upar, Neeche, Sabse Peeche */
+            
+            background-image: 
+                url('https://picsum.photos/id/337/120/150'), /* 1. Woman (Top-Left) */
+                url('https://picsum.photos/id/189/100/100'), /* 2. Deity (Top-Right) */
+                url('https://picsum.photos/id/299/150/100'), /* 3. Coffee (Bottom-Center) */
+                url('https://picsum.photos/id/237/600/400'); /* 4. Man (Main Background) */
+
+            background-repeat: 
+                no-repeat,
+                no-repeat,
+                no-repeat,
+                no-repeat; /* Sabhi ko no-repeat */
+
+            /* Har image ki position (usi kram mein) */
+            background-position: 
+                top 15px left 15px,       /* 1: Upar-left corner se thoda door */
+                top 15px right 15px,      /* 2: Upar-right corner se thoda door */
+                bottom 15px center,     /* 3: Neeche center mein */
+                center;                   /* 4: Poora center */
+
+            /* Har image ka size (usi kram mein) */
+            background-size: 
+                120px 150px,  /* 1: Chhota size */
+                100px 100px,  /* 2: Chhota size */
+                150px 100px,  /* 3: Chhota size */
+                cover;        /* 4: Poore box ko cover kare */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Multi Image Box Example</h2>
+    <div class="multi-box">abcd</div>
+
+</body>
+</html>

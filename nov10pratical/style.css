@@ -1,0 +1,39 @@
+/* --- CSS ka sirf background hissa --- */
+
+.multi-box {
+    /* ... (width, height, color, etc. upar wale example se le lein) ... */
+
+    /* KRAM (Order): Woman, Deity, Coffee, Man */
+    background-image: 
+        /* Link 1: Woman */
+        url('DIRECT_LINK_WOMAN_HEADDRESS_KA_YAHAN_DALEN'),
+        
+        /* Link 2: Deity */
+        url('DIRECT_LINK_DEITY_STATUE_KA_YAHAN_DALEN'),
+        
+        /* Link 3: Coffee Cups */
+        url('DIRECT_LINK_COFFEE_CUPS_KA_YAHAN_DALEN'),
+        
+        /* Link 4: Man Standing (Sabse peeche) */
+        url('DIRECT_LINK_MAN_STANDING_KA_YAHAN_DALEN');
+
+    background-repeat: 
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+    /* Positions (Layout aap badal sakte hain) */
+    background-position: 
+        top 15px left 15px,       /* 1. Woman */
+        top 15px right 15px,      /* 2. Deity */
+        bottom 15px center,     /* 3. Coffee */
+        center;                   /* 4. Man */
+
+    /* Size */
+    background-size: 
+        120px 150px,  /* 1. Woman (size) */
+        100px 100px,  /* 2. Deity (size) */
+        150px 100px,  /* 3. Coffee (size) */
+        cover;        /* 4. Man (poora cover) */
+}
